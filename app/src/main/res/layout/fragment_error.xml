@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/raisin_black"
+    tools:context=".ui.view.ErrorFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:gravity="center"
+        android:text="@string/error_of_connection"
+        android:textColor="@color/platinum"
+        android:textSize="16dp"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btn_error_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:backgroundTint="@null"
+        app:cornerRadius="32dp"
+        android:backgroundTint="@color/safety_orange"
+        android:textColor="@color/platinum"
+        android:text="@string/retry"
+        android:textStyle="bold"/>
+
+</LinearLayout>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_fragment_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/raisin_black">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_detail_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginHorizontal="12dp"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="180dp"
+        android:layout_height="225dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/item_image"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:contentDescription="descrizione immagine"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            tools:text="Title Drink"
+            android:textSize="16sp"
+            android:textColor="@color/platinum"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/item_text_instruction_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/instruction"
+            android:textSize="16sp"
+            android:textColor="@color/safety_orange"
+            android:textStyle="bold"
+            android:gravity="start"/>
+        <TextView
+            android:id="@+id/item_text_instruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="This is an example of description of the drink."
+            android:textSize="16sp"
+            android:textColor="@color/platinum"
+            android:textStyle="bold"
+            android:gravity="start"/>
+        <TextView
+            android:id="@+id/item_text_ingredient_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/ingredients"
+            android:textSize="16sp"
+            android:textColor="@color/safety_orange"
+            android:textStyle="bold"
+            android:gravity="start"/>
+        <TextView
+            android:id="@+id/item_text_ingredient1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="Ingredient 1"
+            android:textSize="16sp"
+            android:textColor="@color/platinum"
+            android:textStyle="bold"
+            android:gravity="start"/>
+        <TextView
+            android:id="@+id/item_text_ingredient2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="Ingredient 2"
+            android:textSize="16sp"
+            android:textColor="@color/platinum"
+            android:textStyle="bold"
+            android:gravity="start"/>
+        <TextView
+            android:id="@+id/item_text_ingredient3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            tools:text="Ingredient 3"
+            android:textSize="16sp"
+            android:textColor="@color/platinum"
+            android:textStyle="bold"
+            android:gravity="start"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+
+
+</LinearLayout>
