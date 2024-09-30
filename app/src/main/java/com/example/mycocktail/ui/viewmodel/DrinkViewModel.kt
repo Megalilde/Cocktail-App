@@ -77,12 +77,10 @@ class DrinkViewModel: ViewModel() {
     }
 
     fun fetchDrinksFromRepository(){
-        val job = viewModelScope.launch{
+        viewModelScope.launch{
             val result = drinkRepository.fetchDrinksFromService(currentCategoryType)
             _drinkList.value = result
             _retryStatus.value = result.isSuccess
-        }
-        if(job.isCompleted){
             loadSuggestionName()
         }
     }
