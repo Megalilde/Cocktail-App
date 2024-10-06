@@ -14,17 +14,17 @@ import retrofit2.http.Query
 
 interface DrinkApi {
     @GET("filter.php")
-    fun getDrink(
+    suspend fun getDrink(
         @Query("a") alcoholic: String
-    ): Call<DrinkResponse?>
+    ): DrinkResponse
 
     @GET("lookup.php")
-    fun getDrinkDetailById(
+    suspend fun getDrinkDetailById(
         @Query("i") id: String
-    ): Call<DrinkIdResponse?>
+    ): DrinkIdResponse
 
     @GET("search.php")
-    fun getDrinkByName(
+    suspend fun getDrinkByName(
         @Query("s") name: String
-    ): Call<DrinkIdResponse>
+    ): DrinkIdResponse
 }

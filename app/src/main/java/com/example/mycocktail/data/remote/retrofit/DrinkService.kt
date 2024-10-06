@@ -21,21 +21,8 @@ class DrinkService {
     suspend fun fetchDrinksFromApi(type: String): Result<DrinkResponse?> {
         return withContext(Dispatchers.IO) {
             try {
-                val response = service.getDrink(type).execute()
-                if (response.isSuccessful) {
-                    Result.success(response.body())
-                } else {
-                    when (response.code()) {
-                        400 -> Log.e("Error 400", "Bad Request - Check your request parameters.")
-                        401 -> Log.e("Error 401", "Unauthorized - Check your API key.")
-                        403 -> Log.e("Error 403", "Forbidden - You might not have access.")
-                        404 -> Log.e("Error 404", "Not Found - The endpoint might be wrong.")
-                        500 -> Log.e("Error 500", "Internal Server Error - Problem with the server.")
-                        else -> Log.e("Error", "Unexpected Error: ${response.code()}")
-                    }
-                    Result.failure(Exception("HTTP error with code ${response.code()}"))
-
-                }
+                val response = service.getDrink(type)
+                Result.success(response)
             } catch (e: Exception) {
                 Log.e("Network error", "Errore nel prendere i dati", e)
                 Result.failure(e)
@@ -48,20 +35,8 @@ class DrinkService {
     suspend fun fetchDrinkByIdFromApi(id: String): Result<DrinkIdResponse?>{
         return withContext(Dispatchers.IO){
             try {
-                val response = service.getDrinkDetailById(id).execute()
-                if (response.isSuccessful) {
-                    Result.success(response.body())
-                }else{
-                    when (response.code()) {
-                        400 -> Log.e("Error 400", "Bad Request - Check your request parameters.")
-                        401 -> Log.e("Error 401", "Unauthorized - Check your API key.")
-                        403 -> Log.e("Error 403", "Forbidden - You might not have access.")
-                        404 -> Log.e("Error 404", "Not Found - The endpoint might be wrong.")
-                        500 -> Log.e("Error 500", "Internal Server Error - Problem with the server.")
-                        else -> Log.e("Error", "Unexpected Error: ${response.code()}")
-                    }
-                    Result.failure(Exception("HTTP error with code ${response.code()}"))
-                }
+                val response = service.getDrinkDetailById(id)
+                Result.success(response)
             }catch (e: Exception){
                 Log.e("Network error", "Errore nel prendere i dati", e)
                 Result.failure(e)
@@ -73,24 +48,8 @@ class DrinkService {
     suspend fun fetchDrinkByNameFromApi(name: String): Result<DrinkIdResponse?> {
         return withContext(Dispatchers.IO) {
             try {
-                val response = service.getDrinkByName(name).execute()
-                if (response.isSuccessful) {
-                    Result.success(response.body())
-                } else {
-                    when (response.code()) {
-                        400 -> Log.e("Error 400", "Bad Request - Check your request parameters.")
-                        401 -> Log.e("Error 401", "Unauthorized - Check your API key.")
-                        403 -> Log.e("Error 403", "Forbidden - You might not have access.")
-                        404 -> Log.e("Error 404", "Not Found - The endpoint might be wrong.")
-                        500 -> Log.e(
-                            "Error 500",
-                            "Internal Server Error - Problem with the server."
-                        )
-
-                        else -> Log.e("Error", "Unexpected Error: ${response.code()}")
-                    }
-                    Result.failure(Exception("HTTP error with code ${response.code()}"))
-                }
+                val response = service.getDrinkByName(name)
+                Result.success(response)
             } catch (e: Exception) {
                 Log.e("Network error", "Errore nel prendere i dati", e)
                 Result.failure(e)
